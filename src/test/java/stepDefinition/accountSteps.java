@@ -18,8 +18,8 @@ public class accountSteps extends AbstractClass {
     @Given("^Go to the website$")
     public void go_to_the_website() throws Throwable {
         driver = Driver.getDriver();
-        driver.manage().window().maximize();
 
+        driver.manage().window().maximize();
         driver.get(readProperties.getData("URL"));
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
@@ -27,19 +27,21 @@ public class accountSteps extends AbstractClass {
 
     @Given("^Click on Sign In Tab$")
     public void click_on_Sign_In_Tab() throws Throwable {
+
         ap.clickOnSignInTab();
+        scrollDown();
 
     }
 
-    @Given("^Type the email into the box$")
-    public void type_the_email_into_the_box(String email) throws Throwable {
-        ap.typeTheEmail(email);
-
+    @Given("^type to \"([^\"]*)\" and \"([^\"]*)\"$")
+    public void type_to_and(String arg1, String arg2) throws Throwable {
+      ap.typeTheEmail(arg1);
+      ap.typeThePassword(arg2);
     }
 
-    @Given("^Click on Create Account Button$")
-    public void click_on_Create_Account_Button() throws Throwable {
-        ap.clickOnCreateButton();
+    @Given("^Click on Sign In Button$")
+    public void click_on_Sign_In_Button() throws Throwable {
+        ap.clickOnSignInButton();
     }
 
 

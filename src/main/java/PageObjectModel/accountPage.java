@@ -18,18 +18,18 @@ public class accountPage extends AbstractClass {
         PageFactory.initElements(driver, this);
     }
 
-    // gender id_gender2
-    ////input[@id='customer_firstname']
-    //input[@id='customer_lastname']
-    //input[@id='passwd']
+
 
     @FindBy(css = "a[class='login']")
     private WebElement signInTab;
 
-    @FindBy(xpath = "//input[@id='email_create']")
+    @FindBy(xpath = "//input[@id='email']")
     private WebElement emailBox;
-    @FindBy(xpath = "//button[@id='SubmitCreate']")
-    private WebElement creatingButton;
+
+    @FindBy(xpath = "//input[@id='passwd']")
+    private WebElement passwordBox;
+    @FindBy(xpath = "//*[@id='SubmitLogin']")
+    private WebElement submitButton;
 
     public void clickOnSignInTab() {
 
@@ -37,11 +37,17 @@ public class accountPage extends AbstractClass {
     }
 
     public void typeTheEmail(String email) {
-        String myEmail = readProperties.getData("email");
-        sendKeysFunction(emailBox, myEmail);
+        email = readProperties.getData("email");
+
+        sendKeysFunction(emailBox, email);
     }
 
-    public void clickOnCreateButton() {
-        clickOnFunctionalities(creatingButton);
+    public void typeThePassword(String pswd) {
+       pswd = readProperties.getData("password");
+        sendKeysFunction(passwordBox, pswd);
+    }
+
+    public void clickOnSignInButton() {
+        clickOnFunctionalities(submitButton);
     }
 }
