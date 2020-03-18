@@ -1,19 +1,32 @@
 package PageObjectModel;
 
+import Utilities.Driver;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 public abstract class AbstractClass {
     WebDriverWait wait;
+    WebDriver driver =Driver.getDriver();
+
+
+    public void waitMethod(){
+
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    }
+
 
     public void clickOnFunctionalities(WebElement clickElement) {
-        wait.until(ExpectedConditions.elementToBeClickable(clickElement));
+        waitMethod();
         clickElement.click();
     }
 
     public void sendKeysFunction(WebElement sendkeysElement, String value) {
-        wait.until(ExpectedConditions.visibilityOf(sendkeysElement));
+        waitMethod();
         sendkeysElement.sendKeys(value);
     }
     public void waitUntilVisibility(WebElement waitElement){
@@ -30,5 +43,12 @@ public abstract class AbstractClass {
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
+    }
+
+    public void scrollDown(){
+
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,270)", "");
     }
 }

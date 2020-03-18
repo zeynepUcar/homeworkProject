@@ -18,25 +18,12 @@ public class accountPage extends AbstractClass {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(css = "a[class='login']")
+    @FindBy(xpath = "//a[@class='login']")
     private WebElement signInTab;
-
-    @FindBy(xpath = "//input[@id='email_create']")
-    private WebElement emailBox;
-    @FindBy(xpath = "//button[@id='SubmitCreate']")
-    private WebElement creatingButton;
 
     public void clickOnSignInTab() {
 
         clickOnFunctionalities(signInTab);
     }
 
-    public void typeTheEmail(String email) {
-        String myEmail = readProperties.getData("email");
-        sendKeysFunction(emailBox, myEmail);
-    }
-
-    public void clickOnCreateButton() {
-        clickOnFunctionalities(creatingButton);
-    }
 }

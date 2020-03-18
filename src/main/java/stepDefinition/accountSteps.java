@@ -32,13 +32,13 @@ public class accountSteps extends AbstractClass {
 
     @Given("^Type the email into the box$")
     public void type_the_email_into_the_box(String email) throws Throwable {
-        ap.typeTheEmail(email);
+
 
     }
 
     @Given("^Click on Create Account Button$")
     public void click_on_Create_Account_Button() throws Throwable {
-        ap.clickOnCreateButton();
+
     }
 
 
