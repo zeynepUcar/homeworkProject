@@ -23,4 +23,12 @@ public abstract class AbstractClass {
             System.out.println(e.getMessage());
         }
     }
+    public void waitUntilInVisibility(WebElement waitElement){
+
+        try {
+            wait.until( ExpectedConditions.invisibilityOf( waitElement ) );
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
 }

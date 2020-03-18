@@ -18,7 +18,7 @@ public class accountPage extends AbstractClass {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//div[@class='header_user_info']")
+    @FindBy(css = "a[class='login']")
     private WebElement signInTab;
 
     @FindBy(xpath = "//input[@id='email_create']")
@@ -27,7 +27,7 @@ public class accountPage extends AbstractClass {
     private WebElement creatingButton;
 
     public void clickOnSignInTab() {
-        waitUntilVisibility(signInTab);
+
         clickOnFunctionalities(signInTab);
     }
 
