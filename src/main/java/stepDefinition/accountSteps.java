@@ -6,6 +6,8 @@ import Utilities.Driver;
 import Utilities.readProperties;
 import cucumber.api.java.en.Given;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,8 +18,8 @@ public class accountSteps extends AbstractClass {
     @Given("^Go to the website$")
     public void go_to_the_website() throws Throwable {
         driver = Driver.getDriver();
-        driver.manage().window().maximize();
 
+        driver.manage().window().maximize();
         driver.get(readProperties.getData("URL"));
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
@@ -27,9 +29,11 @@ public class accountSteps extends AbstractClass {
     public void click_on_Sign_In_Tab() throws Throwable {
 
         ap.clickOnSignInTab();
+        scrollDown();
 
     }
 
+<<<<<<< HEAD:src/main/java/stepDefinition/accountSteps.java
     @Given("^Type the email into the box$")
     public void type_the_email_into_the_box(String email) throws Throwable {
 
@@ -39,6 +43,17 @@ public class accountSteps extends AbstractClass {
     @Given("^Click on Create Account Button$")
     public void click_on_Create_Account_Button() throws Throwable {
 
+=======
+    @Given("^type to \"([^\"]*)\" and \"([^\"]*)\"$")
+    public void type_to_and(String arg1, String arg2) throws Throwable {
+      ap.typeTheEmail(arg1);
+      ap.typeThePassword(arg2);
+    }
+
+    @Given("^Click on Sign In Button$")
+    public void click_on_Sign_In_Button() throws Throwable {
+        ap.clickOnSignInButton();
+>>>>>>> origin/master:src/test/java/stepDefinition/accountSteps.java
     }
 
 

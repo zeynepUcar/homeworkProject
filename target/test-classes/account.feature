@@ -3,5 +3,5 @@ Feature: Create an account
 
     Given Go to the website
     And Click on Sign In Tab
-    And type to "email" and "password"
-    And Click on Sign In Button
+    And Type the email into the box
+    And Click on Create Account Button

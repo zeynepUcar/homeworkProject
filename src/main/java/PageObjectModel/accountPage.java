@@ -18,12 +18,45 @@ public class accountPage extends AbstractClass {
         PageFactory.initElements(driver, this);
     }
 
+<<<<<<< HEAD
     @FindBy(xpath = "//a[@class='login']")
     private WebElement signInTab;
 
+=======
+
+
+    @FindBy(css = "a[class='login']")
+    private WebElement signInTab;
+
+    @FindBy(xpath = "//input[@id='email']")
+    private WebElement emailBox;
+
+    @FindBy(xpath = "//input[@id='passwd']")
+    private WebElement passwordBox;
+    @FindBy(xpath = "//*[@id='SubmitLogin']")
+    private WebElement submitButton;
+
+>>>>>>> origin/master
     public void clickOnSignInTab() {
 
         clickOnFunctionalities(signInTab);
     }
 
+<<<<<<< HEAD
+=======
+    public void typeTheEmail(String email) {
+        email = readProperties.getData("email");
+
+        sendKeysFunction(emailBox, email);
+    }
+
+    public void typeThePassword(String pswd) {
+       pswd = readProperties.getData("password");
+        sendKeysFunction(passwordBox, pswd);
+    }
+
+    public void clickOnSignInButton() {
+        clickOnFunctionalities(submitButton);
+    }
+>>>>>>> origin/master
 }
