@@ -5,20 +5,24 @@ import Utilities.readProperties;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class signInPage extends AbstractClass {
 
 
     WebDriver driver;
 
-    public  signInPage() {
+    public signInPage() {
         driver = Driver.getDriver();
         PageFactory.initElements(driver, this);
     }
 
-        //TODO Email ""
+    //TODO Email ""
     @FindBy(xpath = "//input[@id='email']")
     private WebElement emailBox;
 
@@ -38,7 +42,6 @@ public class signInPage extends AbstractClass {
 
 
 
-
     public void typeTheEmail(String email) {
         String myEmail = readProperties.getData("email");
         sendKeysFunction(emailBox, myEmail);
@@ -47,16 +50,19 @@ public class signInPage extends AbstractClass {
     public void typeThePassword(String password) {
 
         String myPass = readProperties.getData("password");
-            sendKeysFunction(Mypassword,myPass);    }
+        sendKeysFunction(Mypassword, myPass);
+    }
 
 
-
-
-            public void clickSignInButton(){
+    public void clickSignInButton() {
 
 
         clickOnFunctionalities(signInButton);
-            }
+    }
+
+
+
+
 }
 
 
