@@ -4,7 +4,7 @@ Feature: Add to cart and remove
     Given Go to the website
     And Click on Sign In Tab
     And type to "email" and "password"
-    And click to sign in button
+    And Click on Sign In Button
     And navigate over the titles
     And click to women button
     And choose a random product
@@ -12,3 +12,4 @@ Feature: Add to cart and remove
     Then cart shouldn't be empty
     When click to remove button
     Then cart should be empty
+

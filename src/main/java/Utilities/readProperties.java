@@ -10,7 +10,7 @@ public class readProperties {
 
     public static String getData(String whichData) {
 
-        String path = "configuration.properteis";
+        String path = "configuration.properties";
 
         String result = null;
 

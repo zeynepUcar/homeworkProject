@@ -17,22 +17,7 @@ public class cartSteps extends AbstractClass {
     BuyItemPage bip = new BuyItemPage();
     CartPage cp = new CartPage();
 
-    @And("^type to \"([^\"]*)\" and \"([^\"]*)\"$")
-    public void typeToAnd(String arg0, String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        sp.typeTheEmail(arg0);
-        sp.typeThePassword(arg1);
 
-    }
-
-
-    @Given("^click to sign in button$")
-    public void click_to_sign_in_button() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-
-        Thread.sleep(1000);
-        sp.clickSignInButton();
-    }
 
     @And("^navigate over the titles$")
     public void navigateOverTheTitles() throws InterruptedException {
