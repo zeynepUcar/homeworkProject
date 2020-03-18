@@ -33,6 +33,17 @@ public class accountSteps extends AbstractClass {
 
     }
 
+<<<<<<< HEAD:src/main/java/stepDefinition/accountSteps.java
+    @Given("^Type the email into the box$")
+    public void type_the_email_into_the_box(String email) throws Throwable {
+
+
+    }
+
+    @Given("^Click on Create Account Button$")
+    public void click_on_Create_Account_Button() throws Throwable {
+
+=======
     @Given("^type to \"([^\"]*)\" and \"([^\"]*)\"$")
     public void type_to_and(String arg1, String arg2) throws Throwable {
       ap.typeTheEmail(arg1);
@@ -42,6 +53,7 @@ public class accountSteps extends AbstractClass {
     @Given("^Click on Sign In Button$")
     public void click_on_Sign_In_Button() throws Throwable {
         ap.clickOnSignInButton();
+>>>>>>> origin/master:src/test/java/stepDefinition/accountSteps.java
     }
 
 
