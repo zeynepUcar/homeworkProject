@@ -18,6 +18,11 @@ public class accountPage extends AbstractClass {
         PageFactory.initElements(driver, this);
     }
 
+    // gender id_gender2
+    ////input[@id='customer_firstname']
+    //input[@id='customer_lastname']
+    //input[@id='passwd']
+
     @FindBy(css = "a[class='login']")
     private WebElement signInTab;
 

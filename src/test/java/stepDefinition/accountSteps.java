@@ -6,6 +6,8 @@ import Utilities.Driver;
 import Utilities.readProperties;
 import cucumber.api.java.en.Given;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import java.util.concurrent.TimeUnit;
 
@@ -25,7 +27,6 @@ public class accountSteps extends AbstractClass {
 
     @Given("^Click on Sign In Tab$")
     public void click_on_Sign_In_Tab() throws Throwable {
-
         ap.clickOnSignInTab();
 
     }
