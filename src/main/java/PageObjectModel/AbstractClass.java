@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.util.List;
 import java.util.Random;
@@ -100,6 +101,14 @@ public abstract class AbstractClass {
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,270)", "");
+    }
+    public void verifyURL(String expectedResult){
+
+
+        String URL = driver.getCurrentUrl();
+
+        Assert.assertTrue(URL.contains( expectedResult )  );
+
     }
 
 }

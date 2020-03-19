@@ -5,6 +5,7 @@ import PageObjectModel.accountPage;
 import Utilities.Driver;
 import Utilities.readProperties;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -46,6 +47,9 @@ public class accountSteps extends AbstractClass {
         ap.clickOnSignInButton();
 
     }
-
+    @Then("^Verify I am in the product page$")
+    public void verify_I_am_in_the_product_page() throws Throwable {
+      ap.verifyURL("controller=my-account");
+    }
 
 }
