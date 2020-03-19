@@ -1,4 +1,4 @@
-Feature: Create an account
+Feature: Contact Us 
 
   Background:
 

@@ -50,5 +50,6 @@ public class contactUsSteps extends AbstractClass {
     @Then("^Verify message has been successfully sent is displayed$")
     public void verify_message_has_been_successfully_sent_is_displayed() throws Throwable {
         cp.verifySentMessage();
+        //
     }
 }
