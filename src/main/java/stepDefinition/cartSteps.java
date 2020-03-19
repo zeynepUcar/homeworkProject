@@ -11,9 +11,8 @@ import gherkin.lexer.Th;
 import org.openqa.selenium.WebDriver;
 public class cartSteps extends AbstractClass {
 
-    WebDriver driver;
-    accountPage ap = new accountPage();
-    signInPage sp = new signInPage();
+
+
     BuyItemPage bip = new BuyItemPage();
     CartPage cp = new CartPage();
 
