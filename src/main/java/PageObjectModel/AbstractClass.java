@@ -6,7 +6,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
+import java.util.List;
 
 public abstract class AbstractClass {
     WebDriver driver;
@@ -60,4 +64,14 @@ public abstract class AbstractClass {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,270)", "");
     }
+
+    public void selectInDropDown(WebElement dropdown){
+        Select select = new Select(dropdown);
+        List<WebElement> list = select.getOptions();
+
+            select.selectByIndex(39);
+
+    }
+
+
 }
