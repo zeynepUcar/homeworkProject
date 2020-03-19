@@ -28,6 +28,7 @@ public class accountPage extends AbstractClass {
 
     @FindBy(xpath = "//input[@id='passwd']")
     private WebElement passwordBox;
+
     @FindBy(xpath = "//*[@id='SubmitLogin']")
     private WebElement submitButton;
 
