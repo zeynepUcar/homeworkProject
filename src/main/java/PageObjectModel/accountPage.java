@@ -19,9 +19,13 @@ public class accountPage extends AbstractClass {
     }
 
 
-
-    @FindBy(css = "a[class='login']")
+    @FindBy(xpath = "//a[@class='login']")
     private WebElement signInTab;
+
+
+
+
+
 
     @FindBy(xpath = "//input[@id='email']")
     private WebElement emailBox;
@@ -32,10 +36,12 @@ public class accountPage extends AbstractClass {
     @FindBy(xpath = "//*[@id='SubmitLogin']")
     private WebElement submitButton;
 
+
     public void clickOnSignInTab() {
 
         clickOnFunctionalities(signInTab);
     }
+
 
     public void typeTheEmail(String email) {
         email = readProperties.getData("email");
@@ -51,4 +57,5 @@ public class accountPage extends AbstractClass {
     public void clickOnSignInButton() {
         clickOnFunctionalities(submitButton);
     }
+
 }
