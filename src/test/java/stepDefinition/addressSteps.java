@@ -49,6 +49,7 @@ public class addressSteps extends AbstractClass {
     @Then("^Click on Delete Button$")
     public void clickOnDeleteButton() {
         address.clickOnDelete();
+
         confirmAlert();
     }
 }

@@ -4,14 +4,9 @@ import Utilities.Driver;
 import Utilities.readProperties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import sun.jvm.hotspot.utilities.Assert;
-
-
-import java.util.List;
 
 public class contactPage extends AbstractClass {
     WebDriver driver;
