@@ -38,12 +38,14 @@ public class addressSteps extends AbstractClass {
         address.selectAstate();
 
     }
-    @Given("^Click on Save button of adress$")
+    @Given("^Click on Save button of address$")
     public void click_on_Save_button_of_adress() throws Throwable {
         address.clickOnSaveButton();
     }
 
-
-//
-
+    @Then("^Click on Delete Button$")
+    public void clickOnDeleteButton() {
+        address.clickOnDelete();
+        confirmAlert();
+    }
 }

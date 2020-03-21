@@ -2,6 +2,7 @@ package PageObjectModel;
 
 import Utilities.Driver;
 import Utilities.readProperties;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -95,14 +96,17 @@ public class addressPage extends AbstractClass {
     private WebElement clickToSave;
 
     public void clickOnSaveButton(){
+
         clickOnFunctionalities(clickToSave);
     }
 
-//    @FindBy(xpath = "(//span[text()='Delete'])[2]")
-//    private WebElement deleteButton;
-//
-//    public void ClickOnDeleteButton(){
-//        clickOnFunctionalities(deleteButton);
-//    }
+    @FindBy(xpath = "(//span[text()='Delete'])[2]")
+    private WebElement deleteButton;
+
+    public void clickOnDelete(){
+
+        clickOnFunctionalities(deleteButton);
+
+    }
 
 }
