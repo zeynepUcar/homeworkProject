@@ -2,6 +2,7 @@ package PageObjectModel;
 
 import Utilities.Driver;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -122,6 +123,12 @@ public abstract class AbstractClass {
         String URL = driver.getCurrentUrl();
 
         Assert.assertTrue(URL.contains( expectedResult )  );
+
+    }
+
+    public void confirmAlert(){
+
+        driver.switchTo().alert().accept();
 
     }
 
