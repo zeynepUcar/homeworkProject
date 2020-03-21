@@ -1,4 +1,4 @@
-Feature:Editing personal information
+Feature: Editing personal information
   Scenario: Editing personal information
 
     Given Go to the website

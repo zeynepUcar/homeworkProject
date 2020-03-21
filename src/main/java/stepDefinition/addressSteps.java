@@ -38,12 +38,12 @@ public class addressSteps extends AbstractClass {
         address.selectAstate();
 
     }
-
-
-    @Given("^Click on Save button$")
-    public void click_on_Save_button() throws Throwable {
-
+    @Given("^Click on Save button of adress$")
+    public void click_on_Save_button_of_adress() throws Throwable {
         address.clickOnSaveButton();
     }
+
+
+
 
 }

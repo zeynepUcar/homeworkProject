@@ -1,4 +1,4 @@
-package pageObjectModel;
+package PageObjectModel;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -7,8 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeTest;
-import utilities.Driver;
-import utilities.readProperties;
+import Utilities.Driver;
+import Utilities.readProperties;
 
 public class personalInfoPage extends AbstractClass {
     WebDriver driver;
@@ -57,9 +57,10 @@ public class personalInfoPage extends AbstractClass {
     private WebElement inputEmail;
 
     public void typeNewEmail(String email) {
-        email = readProperties.getData("email");
-        inputEmail.sendKeys(Keys.CONTROL,Keys.chord("a"));
-        inputEmail.sendKeys(Keys.BACK_SPACE);
+        email = readProperties.getData("email2");
+//        inputEmail.sendKeys(Keys.CONTROL,Keys.chord("a"));
+//        inputEmail.sendKeys(Keys.BACK_SPACE);
+        inputEmail.clear();
         sendKeysFunction(inputEmail, email);
 
     }
@@ -68,7 +69,7 @@ public class personalInfoPage extends AbstractClass {
     private WebElement oldPassword;
 
     public void typeOldPassWord(String password) {
-        password = readProperties.getData(password);
+        password = readProperties.getData("password");
         sendKeysFunction(oldPassword, password);
     }
 

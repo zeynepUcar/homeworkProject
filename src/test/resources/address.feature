@@ -8,6 +8,6 @@ Feature: Add a new address
     And Click on My Addresses Button
     And Click on Add a new address Button
     And Type to "address" and "city" and "postcode" and "mobile" and "title"
-    And Click on Save button
+    And Click on Save button of adress
 
 

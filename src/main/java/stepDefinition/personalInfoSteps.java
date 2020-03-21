@@ -1,10 +1,10 @@
-package stepDefinitions;
+package stepDefinition;
 
 import cucumber.api.java.en.Given;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pageObjectModel.AbstractClass;
-import pageObjectModel.personalInfoPage;
+import PageObjectModel.AbstractClass;
+import PageObjectModel.personalInfoPage;
 
 public class personalInfoSteps extends AbstractClass {
 

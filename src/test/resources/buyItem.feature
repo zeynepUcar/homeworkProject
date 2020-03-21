@@ -9,6 +9,7 @@ Feature: Buy Item
   Scenario: Buying an item
     And Search  for the "Dress"
     And Click on Search Button
+    And Click on List View
     And Click on any dress
     And Click on add to cart button
     And Click on Proceed to Checkout Button

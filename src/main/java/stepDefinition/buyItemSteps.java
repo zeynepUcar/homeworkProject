@@ -20,6 +20,11 @@ public class buyItemSteps extends AbstractClass {
 
     }
 
+    @Given("^Click on List View$")
+    public void click_on_List_View() throws Throwable {
+        bip.clickOnListView();
+    }
+
     @Given("^Click on any dress$")
     public void click_on_any_dress() throws Throwable {
         bip.clickOnAnyItem();

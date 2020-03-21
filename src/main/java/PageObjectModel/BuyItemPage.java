@@ -18,6 +18,8 @@ public class BuyItemPage extends AbstractClass {
             @FindBy(xpath = "//img[@class='replace-2x img-responsive']")
     })
     private List<WebElement> dressesList;
+    @FindBy(xpath = "//i[@class='icon-th-list']")
+    private WebElement listIcon;
 
     @FindBy(xpath = "//span[text()=\'Add to cart\']")
     private WebElement addToCartButton;
@@ -43,15 +45,21 @@ public class BuyItemPage extends AbstractClass {
     private WebElement orderCompleteSentence;
 
     public void typeTheSearchBox(String item) {
+
         sendKeysFunction(searchBox, item);
     }
 
     public void clickOnSearchButton() {
+
         clickOnFunctionalities(searchButton);
     }
 
     public void clickOnAnyItem() {
         randomMethodForClothes(dressesList);
+    }
+
+    public void clickOnListView() {
+        clickOnFunctionalities(listIcon);
     }
 
     public void clickOnAddToCartButton() {
@@ -92,4 +100,6 @@ public class BuyItemPage extends AbstractClass {
         String myExpected = "Your order on My Store is complete.";
         verifyOrder(orderCompleteSentence, myExpected);
     }
+
+
 }
