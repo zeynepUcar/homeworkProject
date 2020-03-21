@@ -104,6 +104,7 @@ public class addressPage extends AbstractClass {
     private WebElement deleteButton;
 
     public void clickOnDelete(){
+
         clickOnFunctionalities(deleteButton);
 
     }

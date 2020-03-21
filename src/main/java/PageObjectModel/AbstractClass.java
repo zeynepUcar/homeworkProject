@@ -128,7 +128,7 @@ public abstract class AbstractClass {
 
     public void confirmAlert(){
 
-        driver.switchTo().alert().accept();
+        driver.switchTo().alert().accept();  //to accept alert
 
     }
 
