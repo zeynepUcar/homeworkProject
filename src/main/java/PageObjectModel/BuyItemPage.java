@@ -1,94 +1,95 @@
 package PageObjectModel;
 
-import Utilities.Driver;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class BuyItemPage  extends  AbstractClass{
-    WebDriver driver;
-    public BuyItemPage(){
+public class BuyItemPage extends AbstractClass {
 
-        driver = Driver.getDriver();
-        PageFactory.initElements(driver, this);
-    }
+    @FindBy(css = "input[placeholder='Search']")
+    private WebElement searchBox;
 
-
-
-//TODO Clothes Category List
-
-    @FindAll({
-            @FindBy(xpath = "//a[@class='sf-with-ul']")})
-    private List<WebElement> clothesBar;
-
-
-    //TODO Women Button
-
-    @FindBy(xpath = "//a[text()='Women']")
-    private WebElement womenButton;
-
-
-
-    //TODO List Icon
-
-    @FindBy(xpath = "//i[@class='icon-th-list']")
-    private WebElement listIcon;
-
-    //TODO Clothes List
+    @FindBy(css = " button[name='submit_search']")
+    private WebElement searchButton;
 
     @FindAll({
             @FindBy(xpath = "//img[@class='replace-2x img-responsive']")
-    }) private List <WebElement>clothesList;
+    })
+    private List<WebElement> dressesList;
 
+    @FindBy(xpath = "//span[text()=\'Add to cart\']")
+    private WebElement addToCartButton;
 
-
-
-
-    //TODO List of Cart Buttons
-
-    @FindAll({
-            @FindBy(xpath = "//span[text()='Add to cart']")
-    }) private List <WebElement> listOfCartButtons;
-
-
-    //TODO Proceed To Checkout Button
-
-    @FindBy(xpath = "//a[@class='btn btn-default button button-medium']")
+    @FindBy(css = "a[title='Proceed to checkout']")
     private WebElement proceedToCheckoutButton;
 
+    @FindBy(xpath = "(//a[@title='Proceed to checkout'])[2]")
+    private WebElement proceedToCheckOutButtonOgSignInPart;
+    @FindBy(css = "button[name='processAddress']")
+    private WebElement proceedToCheckOutAdreesPart;
+    @FindBy(xpath = "//input[@type='checkbox']")
+    private WebElement checkBoxOfTermService;
 
-    public void clickToListIcon(){
+    @FindBy(xpath = "(//button[@type='submit'])[2]")
+    private WebElement proceedCheckOutLastPart;
+    @FindBy(css = "a[title='Pay by bank wire']")
+    private WebElement paymentType;
+    @FindBy(xpath = "//span[text()='I confirm my order']")
+    private WebElement confirmButton;
 
-        clickOnFunctionalities(listIcon);
+    @FindBy(xpath = "//strong[text()='Your order on My Store is complete.']")
+    private WebElement orderCompleteSentence;
+
+    public void typeTheSearchBox(String item) {
+        sendKeysFunction(searchBox, item);
     }
 
-
-    public void clickRandomCartButton(){
-randomMethodForClothes(listOfCartButtons);
-}
-
-
-public void navigateOver() throws InterruptedException {
-        Actions ac = new Actions(driver);
-
-        for (int i = 0; i < clothesBar.size(); i++) {
-            ac.moveToElement(clothesBar.get(i)).perform();
-            Thread.sleep(1000);
-        }
+    public void clickOnSearchButton() {
+        clickOnFunctionalities(searchButton);
     }
 
-    public void clickWomenButton(){
-        clickOnFunctionalities(womenButton);
-
+    public void clickOnAnyItem() {
+        randomMethodForClothes(dressesList);
     }
 
-    public void clickToCheckoutButton(){
+    public void clickOnAddToCartButton() {
+        clickOnFunctionalities(addToCartButton);
+    }
 
+    public void clickOnProceedToChechout() {
         clickOnFunctionalities(proceedToCheckoutButton);
+    }
+
+    public void clickOnProceedToChechoutSignIn() {
+        clickOnFunctionalities(proceedToCheckOutButtonOgSignInPart);
+    }
+
+    public void clickOnProceedToCheckOutAdressPart() {
+        clickOnFunctionalities(proceedToCheckOutAdreesPart);
+
+    }
+
+    public void clickOnCheckbox() {
+        waitUntilInVisibility(proceedToCheckOutAdreesPart);
+        clickOnFunctionalities(checkBoxOfTermService);
+    }
+
+    public void clickOnProceedToChckOutLast() {
+        clickOnFunctionalities(proceedCheckOutLastPart);
+    }
+
+    public void clickOnPaymentType() {
+        clickOnFunctionalities(paymentType);
+    }
+
+    public void clickOnConfirmButton() {
+        clickOnFunctionalities(confirmButton);
+    }
+
+    public void verifyingMyOrder() {
+        String myExpected = "Your order on My Store is complete.";
+        verifyOrder(orderCompleteSentence, myExpected);
     }
 }

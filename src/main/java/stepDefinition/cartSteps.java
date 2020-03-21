@@ -1,75 +1,55 @@
 package stepDefinition;
 import PageObjectModel.*;
-import Utilities.Driver;
-import Utilities.readProperties;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import gherkin.lexer.Th;
-import org.openqa.selenium.WebDriver;
+
 public class cartSteps extends AbstractClass {
 
-
-
-    BuyItemPage bip = new BuyItemPage();
-    CartPage cp = new CartPage();
-
-
+    AddToCartPage acp = new AddToCartPage();
 
     @And("^navigate over the titles$")
     public void navigateOverTheTitles() throws InterruptedException {
 
-        bip.navigateOver();
+        acp.navigateOver();
     }
 
     @And("^click to women button$")
     public void clickToWomenButton() {
-        bip.clickWomenButton();
+        acp.clickWomenButton();
     }
 
     @And("^choose a random product$")
     public void chooseARandomProduct() throws InterruptedException {
 
-
-
-        bip.clickToListIcon();
+        acp.clickToListIcon();
         Thread.sleep(1000);
-        bip.clickRandomCartButton();
+        acp.clickRandomCartButton();
         Thread.sleep(1000);
-
 
     }
 
-
     @When("^click to Proceed to checkout$")
     public void clickToProceedToCheckout() throws InterruptedException {
-        bip.clickToCheckoutButton();
-
+        acp.clickToCheckoutButton();
         Thread.sleep(3000);
-
 
     }
 
     @Then("^cart shouldn't be empty$")
     public void cartShouldnTBeEmpty() {
-        cp.verifyToCart();
-
+        acp.verifyToCart();
 
     }
     @When("^click to remove button$")
     public void clickToRemoveButton() {
 
-        cp.clickRemoveTitle();
+        acp.clickRemoveTitle();
     }
-
-
 
     @Then("^cart should be empty$")
     public void cartShouldBeEmpty() {
 
     }
-
 
 }

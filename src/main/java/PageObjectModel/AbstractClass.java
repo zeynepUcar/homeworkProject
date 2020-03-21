@@ -22,8 +22,7 @@ public abstract class AbstractClass {
     WebDriverWait wait;
 
 
-
-    public void waitMethod(){
+    public void waitMethod() {
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
@@ -79,12 +78,10 @@ public abstract class AbstractClass {
     }
 
 
+    public void randomMethodForClothes(List<WebElement> products) {
 
-
-    public void randomMethodForClothes( List<WebElement> produckts) {
-
-        int randomNum = randomGenerator(produckts.size());
-        clickOnFunctionalities(produckts.get(randomNum));
+        int randomNum = randomGenerator(products.size());
+        clickOnFunctionalities(products.get(randomNum));
 
 
     }
@@ -97,8 +94,6 @@ public abstract class AbstractClass {
     }
 
 
-
-
     public void scrollDown() {
 
 
@@ -107,24 +102,27 @@ public abstract class AbstractClass {
     }
 
 
-    public void selectInDropDown(WebElement dropdown){
+    public void selectInDropDown(WebElement dropdown) {
         Select select = new Select(dropdown);
         List<WebElement> list = select.getOptions();
 
-            select.selectByIndex(39);
+        select.selectByIndex(39);
 
     }
 
 
-    public void verifyURL(String expectedResult){
+    public void verifyURL(String expectedResult) {
 
 
         String URL = driver.getCurrentUrl();
 
-        Assert.assertTrue(URL.contains( expectedResult )  );
+        Assert.assertTrue(URL.contains(expectedResult));
 
     }
 
-
+    public void verifyOrder(WebElement element, String exoected) {
+        String actual=element.getText();
+        Assert.assertEquals(actual,exoected);
+    }
 }
 
