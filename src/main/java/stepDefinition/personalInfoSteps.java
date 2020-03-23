@@ -33,7 +33,6 @@ public class personalInfoSteps extends AbstractClass {
         waitMethod();
 
         scrollDown();
-
     }
 
     @Given("^type \"([^\"]*)\"and \"([^\"]*)\"$")
@@ -43,8 +42,6 @@ public class personalInfoSteps extends AbstractClass {
         waitMethod();
 
         ip.inputnewPassWord(newPassWord);
-
-
     }
 
     @Given("^Click on Save button$")

@@ -6,6 +6,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
 public class buyItemSteps extends AbstractClass {
+
     BuyItemPage bip = new BuyItemPage();
 
     @Given("^Search  for the \"([^\"]*)\"$")
@@ -27,7 +28,9 @@ public class buyItemSteps extends AbstractClass {
 
     @Given("^Click on any dress$")
     public void click_on_any_dress() throws Throwable {
+        Thread.sleep(2000);
         bip.clickOnAnyItem();
+
 
     }
 
@@ -41,7 +44,6 @@ public class buyItemSteps extends AbstractClass {
     public void click_on_Proceed_to_Checkout_Button() throws Throwable {
         scrollDown();
         bip.clickOnProceedToChechout();
-
 
     }
 

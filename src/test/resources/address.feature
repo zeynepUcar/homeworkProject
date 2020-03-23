@@ -1,6 +1,7 @@
 Feature: Add a new address
   Scenario: Adding a new address
 
+
     Given Go to the website
     And Click on Sign In Tab
     And type to "email" and "password"

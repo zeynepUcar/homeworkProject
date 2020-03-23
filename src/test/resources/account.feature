@@ -1,5 +1,4 @@
 Feature: Create an account
-
   Scenario: Creating account
 
     Given Go to the website

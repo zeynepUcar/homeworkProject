@@ -1,11 +1,10 @@
-Feature: Buy Item
+Feature: Verify Order History
+
   Background:
     Given Go to the website
     And Click on Sign In Tab
     And type to "email" and "password"
     And Click on Sign In Button
-
-  Scenario: Buying an item
     And Search  for the "Dress"
     And Click on Search Button
     And Click on List View
@@ -18,4 +17,10 @@ Feature: Buy Item
     And Click on Proceed to Checkout Button Last Part
     And Click on Pay by bank wire tab
     And Click on I confirm my order button
-    Then Verify your order is complete
+
+
+  Scenario: Verifying Order History
+    And Get the reference number from text
+    And Click on Tugba Aydin tab
+    And Click on Order History and Details
+    Then Confirm order reference number is same after click on my order button

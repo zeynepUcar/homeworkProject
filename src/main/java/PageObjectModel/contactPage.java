@@ -9,7 +9,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class contactPage extends AbstractClass {
+
     WebDriver driver;
+
+
 
     public contactPage() {
         driver = Driver.getDriver();

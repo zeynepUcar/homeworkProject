@@ -15,7 +15,7 @@ import java.util.List;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-
+import java.util.UUID;
 
 public abstract class AbstractClass {
     WebDriver driver;
@@ -135,6 +135,84 @@ public abstract class AbstractClass {
     public void verifyOrder(WebElement element, String exoected) {
         String actual=element.getText();
         Assert.assertEquals(actual,exoected);
+    }
+
+    //after this point need to be checked
+
+    public static String getXpathForTitle(int num){
+        return "//div[@class='box']/text()["+num+"]";
+    }
+
+    public static String injectWrappedText(String xpath, WebDriver driver){
+        String randomId = UUID.randomUUID().toString();
+        StringBuilder script = new StringBuilder();
+        script
+                .append("var webElementWrapper = document.createElement(\"span\");").append("\n")
+                .append("var text = document.evaluate(\"" + xpath + "\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.cloneNode(true);").append("\n")
+                .append("var body = document.getElementsByTagName(\"body\");").append("\n")
+                .append("webElementWrapper.appendChild(text);").append("\n")
+                .append("body.item(0).appendChild(webElementWrapper);").append("\n")
+                .append("var att = document.createAttribute(\"id\");").append("\n")
+                .append("att.value = \""+randomId+"\";").append("\n")
+                .append("webElementWrapper.setAttributeNode(att);");
+        ((JavascriptExecutor)driver).executeScript(script.toString());
+        return randomId;
+    }
+
+    public String  getReferenceNumber(String element){
+
+        String text = getXpathForTitle(11);
+
+        System.out.println(text+"<<<<<<<<<<<_-----------------text is here ");
+
+        String[] s = text.split(" ", 10);
+
+        System.out.println(text);
+
+        String myelement = s[9];
+
+        System.out.println(myelement);
+
+        return myelement;
+//        boolean result = false;
+
+//        for (int i = 0; i < s.length; i++) {
+//            if (s[i].trim().equalsIgnoreCase(value)){
+//                result = true;
+//                break;
+//            }
+//        }
+//        if(result==false){
+//            Assert.fail(  );
+//        }else{
+//            System.out.println(value + " is displayed");
+//        }
+
+    }
+
+    public void verifyOrderNumber( List<WebElement> expected, String element , String value){
+
+       getReferenceNumber(element);
+
+        for (int i = 0; i < expected.size(); i++) {
+            String expectedText = expected.get(i).getText();
+            if(expectedText.trim().equalsIgnoreCase(value)){
+                Assert.assertEquals(value,expectedText);
+            }
+        }
+
+
+    }
+
+    public void sleep(int num){
+
+        try{
+            Thread.sleep(num * 1000);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+
+        }
+
     }
 }
 

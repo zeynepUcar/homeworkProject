@@ -8,6 +8,7 @@ import java.util.List;
 
 public class BuyItemPage extends AbstractClass {
 
+
     @FindBy(css = "input[placeholder='Search']")
     private WebElement searchBox;
 
@@ -44,6 +45,7 @@ public class BuyItemPage extends AbstractClass {
     @FindBy(xpath = "//strong[text()='Your order on My Store is complete.']")
     private WebElement orderCompleteSentence;
 
+
     public void typeTheSearchBox(String item) {
 
         sendKeysFunction(searchBox, item);
@@ -55,6 +57,7 @@ public class BuyItemPage extends AbstractClass {
     }
 
     public void clickOnAnyItem() {
+
         randomMethodForClothes(dressesList);
     }
 
@@ -73,6 +76,7 @@ public class BuyItemPage extends AbstractClass {
     public void clickOnProceedToChechoutSignIn() {
         clickOnFunctionalities(proceedToCheckOutButtonOgSignInPart);
     }
+
 
     public void clickOnProceedToCheckOutAdressPart() {
         clickOnFunctionalities(proceedToCheckOutAdreesPart);

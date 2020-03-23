@@ -7,6 +7,7 @@ import cucumber.api.java.en.Then;
 import gherkin.lexer.Th;
 
 public class contactUsSteps extends AbstractClass {
+
     contactPage cp = new contactPage();
 
     @Given("^Click on Contact Us Tab$")

@@ -1,5 +1,4 @@
 Feature: Contact Us
-
   Background:
 
     Given Go to the website
@@ -8,7 +7,6 @@ Feature: Contact Us
     And Click on Sign In Button
 
   Scenario: Contact us
-
     And Click on Contact Us Tab
     And Select Subject Heading
     And Select Order Reference

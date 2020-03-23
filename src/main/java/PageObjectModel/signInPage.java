@@ -59,10 +59,6 @@ public class signInPage extends AbstractClass {
 
         clickOnFunctionalities(signInButton);
     }
-
-
-
-
 }
 
 

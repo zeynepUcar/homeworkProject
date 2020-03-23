@@ -19,7 +19,6 @@ public class addressSteps extends AbstractClass {
 
         address.clickOnMyAddressTab();
         scrollDown();
-
     }
 
     @Given("^Click on Add a new address Button$")
@@ -48,4 +47,5 @@ public class addressSteps extends AbstractClass {
         address.clickOnDelete();
         confirmAlert();
     }
+
 }

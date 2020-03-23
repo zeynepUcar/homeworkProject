@@ -21,6 +21,7 @@ public class addressPage extends AbstractClass {
         PageFactory.initElements(driver,this);
     }
 
+
     @FindBy(xpath = "//span[text()='My addresses']")
     private WebElement myAddressTab;
 
@@ -28,6 +29,7 @@ public class addressPage extends AbstractClass {
 
         clickOnFunctionalities(myAddressTab);
     }
+
 
     @FindBy(xpath = "//span[text()='Add a new address']")
     private WebElement addNewAddress;

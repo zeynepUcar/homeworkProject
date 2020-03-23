@@ -12,6 +12,8 @@ import org.testng.Assert;
 import java.util.List;
 
 public class AddToCartPage extends AbstractClass {
+
+
     WebDriver driver;
 
     public AddToCartPage() {
