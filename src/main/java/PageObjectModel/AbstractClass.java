@@ -114,7 +114,6 @@ public abstract class AbstractClass {
 
     }
 
-
     public void verifyURL(String expectedResult){
 
 

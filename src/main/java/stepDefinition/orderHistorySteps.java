@@ -13,6 +13,7 @@ public class orderHistorySteps extends AbstractClass {
 
     orderHistoryPage order = new orderHistoryPage();
 
+
     @And("^Get the amount from order confirmation$")
     public void getTheAmountFromOrderConfirmation() {
 
