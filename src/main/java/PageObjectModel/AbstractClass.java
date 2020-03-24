@@ -111,7 +111,6 @@ public abstract class AbstractClass {
         List<WebElement> list = select.getOptions();
 
             select.selectByIndex(39);
-
     }
 
     public void verifyURL(String expectedResult){

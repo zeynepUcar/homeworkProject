@@ -18,6 +18,7 @@ Feature: Verify Order History
     And Click on Pay by bank wire tab
     And Click on I confirm my order button
 
+
   Scenario: Verifying Order History
     And Get the amount from order confirmation
     And Click on Tugba Aydin tab

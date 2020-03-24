@@ -20,7 +20,6 @@ public class orderHistoryPage extends AbstractClass{
         PageFactory.initElements(driver,this);
     }
 
-
     @FindBy(xpath = "//span[text()='Tugba Aydin']")
     private WebElement clickOnTugbaAydin;
 
