@@ -20,7 +20,7 @@ Feature: Verify Order History
 
 
   Scenario: Verifying Order History
-    And Get the reference number from text
+    And Get the amount from order confirmation
     And Click on Tugba Aydin tab
     And Click on Order History and Details
-    Then Confirm order reference number is same after click on my order button
+    Then Confirm total price column is matched with amount from order confirmation

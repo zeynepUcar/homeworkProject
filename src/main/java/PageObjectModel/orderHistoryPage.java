@@ -23,42 +23,54 @@ public class orderHistoryPage extends AbstractClass{
     @FindBy(xpath = "//span[text()='Tugba Aydin']")
     private WebElement clickOnTugbaAydin;
 
+
+    @FindBy(xpath = "//span[text()='Order history and details']")
+    private WebElement orderHistory;
+
+
+    @FindBy(xpath = "//*[@id=\"center_column\"]/div/span/strong")
+
+    private WebElement amount;
+
+
+    @FindAll({
+            @FindBy(xpath = "//table[@id='order-list']/tbody//td[3]")
+    })
+
+    private List<WebElement> firstColumnOflist;
+
+
+
     public void clickOnTugbaAydinTab(){
         clickOnFunctionalities(clickOnTugbaAydin);
     }
 
-    @FindBy(xpath = "//span[text()='Order history and details']")
-    private WebElement orderHistory;
 
     public void clickOnOrderHistoryTab(){
         scrollDown();
         clickOnFunctionalities(orderHistory);
     }
 
-    //to get the reference number in text
 
-    @FindBy(xpath = "//div[@class='box']/text()[11]")
-    private String referenceNum;
-    
-    public void getTheReferenceNumber(){
 
-        sleep(3);
+    //to get the amount from order confirmation
 
-        String s = injectWrappedText(getXpathForTitle(11),driver);
+    String totalPrice= "";  //we used this to define in below, otherwise I cannot get webElement as string
 
-        System.out.println(driver.findElement(By.xpath("ca9c255d-bd62-4cba-8df0-fbf674aaa629")));
+    public void getTheAmountFromOrder(){
+
+
+       totalPrice = getAmountFromConfirmation(amount);
+
     }
 
-    //to get the column of reference list
 
-    @FindAll({
-            @FindBy(xpath = "//table[@id='order-list']/tbody//td[1]")
-    })
-    private List<WebElement> firstColumnlist;
 
-    public void getTheColumnReferenceNum(String value){
+    //to get the column of total price list
 
-        verifyOrderNumber(firstColumnlist,referenceNum, value );
+    public void getTheColumnAmountPrice(){
+
+        verifyTotalPrice(firstColumnOflist,totalPrice);
 
 
 
